@@ -7,12 +7,21 @@ int main(){
     char estado1;
     char codigo1[5];
     char nome_cidade[20];             //Nome da cidade
-    int populacao1;
+    unsigned long int populacao1;
     float area1;
     float PIB1;
     int pontos_turisticos;           //Número de pontos turísticos
     float densidade_populacional;
-    float PIB_percapita;                
+    float PIB_percapita;
+    float superPoder; //soma de população,area,PIB,PIB per capita e densidade populacional
+    float densidade_inversa;
+    unsigned long int resultado;
+    unsigned long int resultado2;
+    unsigned long int resultado3;
+    unsigned long int resultado4;
+    unsigned long int resultado5;
+    unsigned long int resultado6;
+    unsigned long int resultado7;             
 
 
 
@@ -31,7 +40,7 @@ int main(){
     scanf("%s", &nome_cidade);
     
     printf("Digite a população:\n");
-    scanf("%d", &populacao1);
+    scanf("%u", &populacao1);
     
     printf("Digite a área:\n");
     scanf("%f", &area1);
@@ -55,18 +64,26 @@ int main(){
     // Cálculo do PIB per capita
     PIB_percapita = PIB1 / populacao1;
 
+    densidade_inversa = 1 / densidade_populacional;  //calcular a densidade populacional inversa
+
+    //soma do super poder
+    superPoder = (float)(populacao1 + area1 + PIB1 + pontos_turisticos + PIB_percapita + densidade_inversa);
+
     
     //exibir os dados da carta 1
     printf("Carta 1!\n");
     printf("Estado: %c\n", estado1);
     printf("Codigo da carta: %s\n", codigo1);
     printf("Nome da cidade: %s\n", nome_cidade);
-    printf("População: %d\n", populacao1);
+    printf("População: %lu\n", populacao1);
     printf("Área: %.2f\n", area1);
     printf("PIB: %f\n", PIB1);
     printf("Pontos turísticos: %d\n", pontos_turisticos);
     printf("Densidade Populacional: %f\n", densidade_populacional);
     printf("PIB per capita: %f\n", PIB_percapita);
+    printf("Densidade inversa: %f\n", densidade_inversa);
+    printf("Super poder: %f\n", superPoder);
+
     
     
     
@@ -75,12 +92,14 @@ int main(){
     char estado2;
     char codigo2[5];
     char nome_cidade2[20];             //Nome da cidade
-    int populacao2;
+    unsigned long int populacao2;
     float area2;
     float PIB2;
     int pontos_turisticos2;
     float densidade_populacional2;       //Número de pontos turísticos
-    float PIB_percapita2;                
+    float PIB_percapita2;
+    float superPoder2; //soma de população,area,PIB,PIB per capita e densidade populacional
+    float densidade_inversa2;              
 
 
 
@@ -97,7 +116,7 @@ int main(){
     scanf("%s", &nome_cidade2);
     
     printf("Digite a população:\n");
-    scanf("%d", &populacao2);
+    scanf("%u", &populacao2);
     
     printf("Digite a área:\n");
     scanf("%f", &area2);
@@ -120,7 +139,12 @@ int main(){
 
     // Cálculo do PIB per capita da segunda carta
     PIB_percapita = PIB2 / populacao2;
-    
+
+    densidade_inversa2 = 1 / densidade_populacional;  //calcular a densidade populacional inversa
+
+    //soma do super poder
+    superPoder2 = (float)(populacao2 + area2 + PIB2 + pontos_turisticos2 + PIB_percapita2 + densidade_inversa2);
+
 
 
     //exibir os dados da carta 2
@@ -129,15 +153,32 @@ int main(){
     printf("Estado: %c\n", estado2);
     printf("Codigo da carta: %s\n", codigo2);
     printf("Nome da cidade: %s\n", nome_cidade2);
-    printf("População: %d\n", populacao2);
+    printf("População: %lu\n", populacao2);
     printf("Área: %f\n", area2);
     printf("PIB: %f\n", PIB2);
     printf("Pontos turísticos: %d\n", pontos_turisticos2);
     printf("Densidade Populacional: %f\n", densidade_populacional2);
     printf("PIB per capita: %f\n", PIB_percapita2);
+    printf("Densidade inversa: %f\n", densidade_inversa2);
+    printf("Super poder: %f\n", superPoder2);
+
+
+
+    //comparação das cartas 1 e 2
+    printf("população1 > pupulação2: %lu\n", (int)populacao1 > populacao2);
+    printf("area1 > area2: %lu\n", (int)area1 > area2);
+    printf("PIB1 > PIB2: %lu\n", (int)PIB1 > PIB2);
+    printf("Pontos turísticos1 > Pontos turísticos2: %lu\n", (int)pontos_turisticos > pontos_turisticos2);
+    printf("Densidade Populacional1 > Densidade Populacional2: %lu\n", (int)populacao1 > pontos_turisticos2);
+    printf("PIB per capita1 > PIB per capita2: %lu\n", (int)PIB_percapita > PIB2);
+    printf("Densidade inversa1 > Densidade inversa2: %lu\n", (int)densidade_inversa > densidade_inversa2);
+    printf("Super poder1 > Super poder2: %lu\n", (int)superPoder > superPoder2);
+    
+
 
 
 
     return 0;
 
 }
+
