@@ -29,7 +29,6 @@ int main(){
 
     printf("Desafio Super Trunfo!\n");
     
-    printf("Novo commit\n");
     printf("Digite a letra do estado (A-H):\n");
     scanf("%c", &estado1);
     
@@ -68,7 +67,7 @@ int main(){
 
     //soma do super poder
     superPoder = (float)(populacao1 + area1 + PIB1 + pontos_turisticos + PIB_percapita + densidade_inversa);
-
+    
     
     //exibir os dados da carta 1
     printf("Carta 1!\n");
@@ -83,9 +82,7 @@ int main(){
     printf("PIB per capita: %f\n", PIB_percapita);
     printf("Densidade inversa: %f\n", densidade_inversa);
     printf("Super poder: %f\n", superPoder);
-
-    
-    
+    printf("-------------------------------------------------------------------------\n");
     
     // Carta 2
 
@@ -145,7 +142,14 @@ int main(){
     //soma do super poder
     superPoder2 = (float)(populacao2 + area2 + PIB2 + pontos_turisticos2 + PIB_percapita2 + densidade_inversa2);
 
+    if (PIB1 > PIB2){
+        printf("PIB1 venceu!\n");
+    }else{
+        printf("PIB2 venceu!\n");
+    }
+    
 
+    printf("------------------------------------------------------------------\n");
 
     //exibir os dados da carta 2
     
@@ -173,6 +177,11 @@ int main(){
     printf("PIB per capita1 > PIB per capita2: %lu\n", (int)PIB_percapita > PIB2);
     printf("Densidade inversa1 > Densidade inversa2: %lu\n", (int)densidade_inversa > densidade_inversa2);
     printf("Super poder1 > Super poder2: %lu\n", (int)superPoder > superPoder2);
+
+    
+    //comparação do PIB1 e do PIB2
+    printf("O maior PIB é: %f\n");
+    
     
 
 
