@@ -96,7 +96,8 @@ int main(){
     float densidade_populacional2;       //Número de pontos turísticos
     float PIB_percapita2;
     float superPoder2; //soma de população,area,PIB,PIB per capita e densidade populacional
-    float densidade_inversa2;              
+    float densidade_inversa2;
+    int opcao;              
 
 
 
@@ -142,12 +143,61 @@ int main(){
     //soma do super poder
     superPoder2 = (float)(populacao2 + area2 + PIB2 + pontos_turisticos2 + PIB_percapita2 + densidade_inversa2);
 
-    if (PIB1 > PIB2){
-        printf("PIB1 venceu!\n");
-    }else{
-        printf("PIB2 venceu!\n");
-    }
+    printf("Qual comparação voce deseja fazer?: \n");
+    printf("Populacao: \n");
+    printf("Área: \n");
+    printf("PIB: \n");
+    printf("Pontos turísticos: \n");
+    printf("Densidade Demográfica: \n");
+    printf("Escolha:\n");
+    scanf("%d", &opcao);
+
+    switch (opcao){
+    case 1:
+        if (populacao1 > populacao2){
+            print("Carta 1 venceu!\n");
+        }else{
+            print("Carta 2 venceu!\n");
+        }
+        break;
+        
+    case 2:
+        if (area1 > area2){
+            print("Carta 1 venceu!\n");
+        }else{
+            print("Carta 2 venceu!\n");
+        }
+        break;
+
+    case 3:
+        if (PIB1 > PIB2){
+            print("Carta 1 venceu!\n");
+        }else{
+            print("Carta 2 venceu!\n");
+        }
+        break;
+
+    case 4:
+        if (pontos_turisticos > pontos_turisticos2){
+            print("Carta 1 venceu!\n");
+        }else{
+            print("Carta 2 venceu!\n");
+        }
+        break;
+
+    case 5:
+        if (densidade_inversa > densidade_inversa2){
+            print("Carta 1 venceu!\n");
+        }else{
+            print("Carta 2 venceu!\n");
+        }
+        break;
     
+    default:
+    print("Valor inválido!");
+        break;
+    }
+
 
     printf("------------------------------------------------------------------\n");
 
